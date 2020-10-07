@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
 from rest_framework import status
+from rest_framework import viewsets
 
 from profiles_api import serializers
 
@@ -44,3 +44,17 @@ class HelloApiView(APIView):
 
   def delete(self, request, pk=None):
     return Response({'method':'DELETE'})
+
+
+
+class HelloApiViewSet(viewsets.Viewset):
+  def list(self, request):
+
+    a_viewset = [
+      'rohan',
+      'rohit',
+      'babita',
+      'khem',
+    ]
+
+    return Response({'message':'Hello', 'a_viewset':a_viewset})
