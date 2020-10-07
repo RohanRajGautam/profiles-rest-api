@@ -47,7 +47,7 @@ class HelloApiView(APIView):
 
 
 
-class HelloApiViewSet(viewsets.Viewset):
+class HelloApiViewSet(viewsets.ViewSet):
   def list(self, request):
 
     a_viewset = [
